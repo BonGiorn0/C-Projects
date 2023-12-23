@@ -1,0 +1,10 @@
+[ Thu Nov 10 20:57:19 2022 0.001585 ] Program started 
+[ Thu Nov 10 20:57:24 2022 0.001737 ] Name of input file was entered 
+[ Thu Nov 10 20:57:24 2022 0.001786 ] "in.bin" was opened 
+[ Thu Nov 10 20:57:24 2022 0.001990 ] X is now = 0.490000 
+[ Thu Nov 10 20:57:24 2022 0.002029 ] "in.bin" was closed 
+[ Thu Nov 10 20:57:28 2022 0.002167 ] Name of output file was entered 
+[ Thu Nov 10 20:57:28 2022 0.002537 ] "out.bin" was opened 
+[ Thu Nov 10 20:57:28 2022 0.002569 ] Ti is now = 0.533388 
+[ Thu Nov 10 20:57:28 2022 0.002585 ] "out.bin" was written 
+[ Thu Nov 10 20:57:28 2022 0.002772 ] "out.bin" was closed 
