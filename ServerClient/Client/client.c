@@ -5,10 +5,10 @@
 #include <arpa/inet.h>
 
 enum{
-    PORT = 1488
+    PORT = 6666
 };
 
-#define SERVER_IP INADDR_LOOPBACK //"127.0.0.0"
+#define SERVER_IP "127.0.0.0"
 #define MESSAGE "Henlo"
 
 int main(int argc, char *argv[]){
@@ -16,6 +16,7 @@ int main(int argc, char *argv[]){
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
     addr.sin_port = htons(PORT);
+    //addr.sin_addr.s_addr = INADDR_LOOPBACK;
 
     int addr_is_valid = inet_aton(SERVER_IP, &(addr.sin_addr)); 
     if(!addr_is_valid){
@@ -31,12 +32,12 @@ int main(int argc, char *argv[]){
     }
 
 
-    int bind_res = bind(socket_fd, (struct sockaddr *)&addr, sizeof(addr));
+    /*int bind_res = bind(socket_fd, (struct sockaddr *)&addr, sizeof(addr));
     if(bind_res == -1){
         perror("bind");
         //printf("Cannot bind socket\n");
         return 1;
-    }
+    }*/
 
     int conection_res = connect(socket_fd, (struct sockaddr *)&addr, sizeof(addr));
     if(conection_res == -1){

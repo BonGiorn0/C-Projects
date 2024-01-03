@@ -5,11 +5,11 @@
 #include <arpa/inet.h>
 
 enum{
-    PORT = 1488,
+    PORT = 6666,
     BUF_SIZE = 100
 };
 
-#define CLIENT_IP INADDR_LOOPBACK //"127.0.0.0"
+#define CLIENT_IP "127.0.0.0"
 
 
 int main(int argc, char *argv[]){
@@ -18,13 +18,15 @@ int main(int argc, char *argv[]){
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
     addr.sin_port = htons(PORT);
+    addr.sin_addr.s_addr = INADDR_ANY;
 
-    int addr_is_valid = inet_aton(CLIENT_IP, &(addr.sin_addr)); 
+    /*int addr_is_valid = inet_aton(CLIENT_IP, &(addr.sin_addr)); 
     if(!addr_is_valid){
         perror("inet_aton");
         //printf("Invalid server IP\n");
         return 1;
-    }
+    }*/
+
 
     socket_fd = socket(AF_INET, SOCK_STREAM, 0);
     if(socket_fd == -1){
